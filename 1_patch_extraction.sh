@@ -1,0 +1,1 @@
+python ./preprocessing/patch_extraction/main_extraction.py --config ./preprocessing/config_examples/preprocessing_example.yaml

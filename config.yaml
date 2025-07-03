@@ -1,0 +1,72 @@
+# MIA Project Configuration Example
+# Copy this file and modify according to your needs
+
+# Project Information
+PROJECT_NAME: "MIA-Project - Medical Image Analysis"
+VERSION: "1.0.0"
+DESCRIPTION: "Whole Slide Image Analysis with Graph Neural Networks"
+
+# Paths Configuration
+PATHS:
+  # Input paths
+  WSI_DIR: "./data/wsi/"
+  LABEL_CSV: "./data/slide_ov_response.csv"
+  MODEL_PATH: "./models/pretrained/NuLite/NuLite-H-Weights.pth"
+  
+  # Output paths
+  OUTPUT_DIR: "./data/wsi_output/"
+  GRAPH_OUTPUT_DIR: "./output/graph_output/"
+  FEATURES_DIR: "./output/features/"
+  LOGS_DIR: "./logs/"
+
+# Processing Parameters
+PROCESSING:
+  # Random sampling parameters
+  NUM_SAMPLES: 600
+  PATCH_SIZE: 1024
+  PATCH_OVERLAP: 64
+  RANDOM_SEED: 42
+  
+  # Detection parameters
+  BATCH_SIZE: 20
+  GPU_ID: 0
+  MAGNIFICATION: 20
+  MPP: 0.5  # Microns per pixel
+  
+  # Graph construction parameters
+  MIN_TUMOR_CELLS_PER_PATCH: 20
+  NUM_WORKERS: 1
+  WORKER_TYPE: "basic"  # or "advanced"
+
+# Model Configuration
+MODEL:
+  # CellNet parameters
+  NODE_FEAT_DIM: 512
+  HIDDEN_DIM: 256
+  NUM_CLASSES: 2
+  
+  # Training parameters
+  LEARNING_RATE: 0.001
+  MOMENTUM: 0.9
+  WEIGHT_DECAY: 0.0005
+  EPOCHS: 100
+  BATCH_SIZE: 32
+
+# Hardware Configuration
+HARDWARE:
+  SELECTION: "openslide"  # or "cucim"
+  USE_GPU: true
+  NUM_WORKERS: 4
+  MAX_MEMORY_GB: 16
+
+# Logging Configuration
+LOGGING:
+  LEVEL: "INFO"  # DEBUG, INFO, WARNING, ERROR
+  SAVE_LOGS: true
+  LOG_FORMAT: "%(asctime)s - %(name)s - %(levelname)s - %(message)s"
+
+# Feature Extraction
+FEATURES:
+  SAVE_ALL_FILES: false  # Save intermediate files
+  SAVE_VISUALIZATION: true
+  ENABLE_PATHML: false  # Use PathML for advanced graph features

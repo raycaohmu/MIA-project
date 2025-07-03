@@ -1,0 +1,13 @@
+python random_sample_nuclei_detection.py \
+    --csv_path ./data/slide_ov_response.csv \
+    --filename_column filename \
+    --model ./models/pretrained/NuLite/NuLite-H-Weights.pth \
+    --output_path ./data/wsi_output \
+    --num_samples 600 \
+    --patch_size 1024 \
+    --patch_overlap 64 \
+    --gpu 0 \
+    --random_seed 42 \
+    --hardware_selection openslide \
+    --mpp 0.5 \
+    --no_visualization

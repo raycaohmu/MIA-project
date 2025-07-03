@@ -1,0 +1,2 @@
+# This file ensures the data directory is tracked by Git
+# while excluding the actual data files due to size constraints

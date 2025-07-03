@@ -1,0 +1,51 @@
+# Core dependencies - Based on actual py38 environment
+torch==2.3.0
+torchvision==0.18.0
+torch-geometric==1.0.3
+torch-scatter==2.1.2+pt23cu121
+torch-sparse==0.6.18+pt23cu121
+torch-cluster==1.6.3+pt23cu121
+
+# Image processing
+openslide-python==1.3.1
+Pillow==10.0.1
+opencv-python==4.5.5.64
+# opencv-python-headless==4.5.4.58  # Alternative to opencv-python
+
+# Scientific computing
+numpy==1.23.5
+scipy==1.8.1
+pandas==1.5.3
+scikit-learn==1.2.1
+
+# Geometric and spatial analysis
+shapely==1.8.5.post1
+# geopandas  # Not installed in current environment
+networkx==3.1
+rasterio==1.3.10
+
+# Visualization
+matplotlib==3.7.1
+seaborn==0.13.2
+
+# Progress bars and utilities
+tqdm==4.65.0
+PyYAML==6.0.2
+
+# Parallel processing
+joblib==1.4.2
+
+# Additional torch-related packages
+torchinfo==1.8.0
+torchmetrics==0.11.4
+
+# Optional dependencies (install if needed)
+# colorlog>=6.6.0
+# geopandas>=0.10.0
+# pathml>=2.0.0  # For advanced graph features
+# cucim>=22.02.0  # For GPU-accelerated image processing
+
+# Development dependencies (optional)
+# pytest>=6.0.0
+# black>=21.0.0
+# flake8>=3.9.0

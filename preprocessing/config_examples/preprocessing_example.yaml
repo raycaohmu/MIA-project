@@ -1,0 +1,23 @@
+# dataset paths
+#wsi_paths: /work/temp.svs
+wsi_paths: /home/stat-caolei/code/MIA/data/wsi/
+output_path: /home/stat-caolei/code/MIA/data/wsi_output/
+hardware_selection: openslide
+# basic setups
+patch_size: 1024
+patch_overlap: 6.25
+#patch_overlap: 0
+#target_mag: 40
+target_mag: 20
+processes: 16
+overwrite: True
+
+# macenko stain normalization
+normalize_stains: False
+
+# finding patches
+min_intersection_ratio: 0.85
+
+wsi_properties:
+  slide_mpp: 0.5  # 或您幻灯片的实际值
+  magnification: 20  # 或您幻灯片的实际值
