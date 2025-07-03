@@ -44,6 +44,57 @@ MIA/
 
 ## 🚀 快速开始
 
+### 环境设置
+
+1. **创建并激活环境**:
+   ```bash
+   # 使用提供的脚本
+   chmod +x setup.sh
+   ./setup.sh
+   
+   # 或手动创建conda环境
+   conda env create -f environment.yml
+   conda activate py38
+   ```
+
+2. **验证安装**:
+   ```bash
+   python test_setup.py
+   ```
+
+### 模型训练
+
+1. **快速训练**:
+   ```bash
+   # 创建默认配置
+   python quick_train.py --create-config
+   
+   # 编辑配置文件（可选）
+   nano train_config_default.json
+   
+   # 开始训练
+   python quick_train.py --config train_config_default.json
+   ```
+
+2. **命令行训练**:
+   ```bash
+   python quick_train.py \
+       --label0-data ./data/label0_dataset.pt \
+       --label1-data ./data/label1_dataset.pt \
+       --epochs 100 \
+       --batch-size 32 \
+       --lr 0.001
+   ```
+
+3. **高级训练选项**:
+   ```bash
+   # 使用shell脚本
+   ./run_training.sh
+   
+   # 或使用配置文件
+   python train.py  # 直接使用增强版训练器
+   ```
+
 ### 环境要求
 
 - Python 3.8+
@@ -147,6 +198,36 @@ bash 4_graph.sh
 **输出**：`output/graph_output/` 目录下的图数据文件
 
 ### 步骤 4: 模型训练
+
+```bash
+# 快速训练（推荐）
+python quick_train.py --create-config
+python quick_train.py --config train_config_default.json
+
+# 或使用shell脚本
+./run_training.sh
+
+# 或直接使用Python
+python train.py
+```
+
+**功能**：
+- 训练CellNet图神经网络模型
+- 自动处理数据集分割(train/val/test)
+- 支持早停、学习率调度、检查点保存
+- 生成训练曲线和详细评估报告
+
+**新增特性**：
+- ✅ **早停机制**：防止过拟合
+- ✅ **学习率调度**：自动调整学习率
+- ✅ **梯度裁剪**：提高训练稳定性
+- ✅ **详细指标**：AUC、混淆矩阵、分类报告
+- ✅ **可视化**：自动生成训练曲线图
+- ✅ **检查点**：支持训练中断恢复
+- ✅ **配置管理**：JSON配置文件
+- ✅ **测试评估**：完整的测试集评估
+
+**输出**：`output/training_results/` 目录下的模型和训练日志
 
 ```bash
 python train.py

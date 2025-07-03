@@ -1,0 +1,16 @@
+{
+  "label0_ds_pt": "./data/label0_dataset.pt",
+  "label1_ds_pt": "./data/label1_dataset.pt",
+  "node_feat_dim": 512,
+  "batch_size": 32,
+  "lr": 0.001,
+  "momentum": 0.9,
+  "weight_decay": 1e-4,
+  "epochs": 100,
+  "res_dir": "./output/training_results",
+  "device": "cuda",
+  "patience": 15,
+  "save_best_only": false,
+  "scheduler_step_size": 30,
+  "scheduler_gamma": 0.1
+}
